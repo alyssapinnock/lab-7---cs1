@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void bubbleSort(int arr[], int n, int swapTotal){
+void bubbleSort(int arr[], int n, int *swapTotal){
     int minIdx = -1;
     int i;
     int j;
@@ -17,19 +17,19 @@ void bubbleSort(int arr[], int n, int swapTotal){
             int tmp = arr[i];
             arr[i] = arr[minIdx];
             arr[minIdx] = tmp;
-            swapTotal++;
+            *swapTotal++;
         }
         
     }
 };
 
-void selectionSort(int arr[], int n, int swapTotal){
+void selectionSort(int arr[], int n, int *swapTotal){
     int minIdx = -1;
     int min = 100;
     
     for(int i=0; i < n; i++){
         if(arr[i] < min){
-            min = arr[1];
+            min = arr[i];
             minIdx = i;
             
         }
@@ -37,7 +37,7 @@ void selectionSort(int arr[], int n, int swapTotal){
             int tmp = arr[i];
             arr[i] = arr[minIdx];
             arr[minIdx] = tmp;
-            swapTotal++;
+            *swapTotal++;
         }
     }   
 };
